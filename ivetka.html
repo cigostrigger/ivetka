@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ivetka</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --overlay-start: rgba(5, 10, 20, 0.25);
+            --overlay-end: rgba(5, 10, 20, 0.65);
+            --accent: #ffd166;
+        }
+
+        /* reset / base */
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        body {
+            background: none
+        }
+
+        /* using <img> for background */
+
+        /* background image inserted via HTML (single source, no reflection/flip) */
+        .site-bg {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: -1;
+            pointer-events: none;
+
+            /* explicitly prevent any flipping or reflection */
+            transform: none !important;
+            -webkit-transform: none !important;
+            backface-visibility: visible !important;
+            -webkit-box-reflect: none !important;
+        }
+
+        /* overlay for contrast */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg, var(--overlay-start), var(--overlay-end));
+            z-index: 0;
+            pointer-events: none;
+            backdrop-filter: blur(4px);
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 980px;
+            margin: 6vh auto;
+            padding: 2rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(6px);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 1rem
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 800;
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            letter-spacing: .5px
+        }
+
+        p.lead {
+            margin: .4rem 0 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600
+        }
+
+        .rules {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: .7rem
+        }
+
+        .rule {
+            display: flex;
+            gap: .75rem;
+            align-items: flex-start;
+            padding: .9rem;
+            border-radius: 10px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .badge {
+            min-width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), #ff9f1c);
+            color: #222;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            flex-shrink: 0
+        }
+
+        .rule p {
+            margin: 0;
+            font-weight: 600;
+            color: #fff
+        }
+
+        footer {
+            margin-top: 1.25rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: .9rem
+        }
+
+        @media (max-width:520px) {
+            .container {
+                margin: 4vh 1rem;
+                padding: 1rem
+            }
+
+            .badge {
+                min-width: 40px;
+                height: 40px;
+                font-size: .9rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- point to your image file here; ensure file exists at img/IMG_1862.png -->
+    <img class="site-bg" src="img/IMG_1862.png" alt="Background image">
+
+    <main class="container" role="main">
+        <header>
+            <h1>Ivetkine múdra</h1>
+            <p class="lead">Súhrn Ivetkiných múdier</p>
+        </header>
+
+        <ul class="rules" role="list">
+            <li class="rule">
+                <div class="badge">1</div>
+                <p>Ticho tam v podpalubí!</p>
+            </li>
+            <li class="rule">
+                <div class="badge">2</div>
+                <p>Nekoukám co kde líta, ale delám co me živí!</p>
+            </li>
+            <li class="rule">
+                <div class="badge">3</div>
+                <p>Tu je oltár!</p>
+            </li>
+            <li class="rule">
+                <div class="badge">4</div>
+                <p>Assets, kurnik, kto sa ta pýtal!?</p>
+            </li>
+            <li class="rule">
+                <div class="badge">5</div>
+                <p>Medzi nebom, zemou a Microsoftom</p>
+            </li>
+            <li class="rule">
+                <div class="badge">6</div>
+                <p>Tomu sa hovori posledne upozornenie pred popravou</p>
+            </li>
+            <li class="rule">
+                <div class="badge">7</div>
+                <p>Ticho vospolok pomodlime sa</p>
+            </li>
+            <li class="rule">
+                <div class="badge">8</div>
+                <p>Aktualizace bez legrace</p>
+            </li>
+            <li class="rule">
+                <div class="badge">9</div>
+                <p>Nepritel naslycha a vsechno vidi</p>
+            </li>
+            <li class="rule">
+                <div class="badge">10</div>
+                <p>Krvák ako sa hovorí na voze</p>
+            </li>
+            <li class="rule">
+                <div class="badge">11</div>
+                <p>Odkledejte si veci nikdy nevite kdy se vam budou hodit</p>
+            </li>
+            <li class="rule">
+                <div class="badge">12</div>
+                <p>Umyt sa a robit</p>
+            </li>
+            <li class="rule">
+                <div class="badge">13</div>
+                <p>Ked sa nahnevame budeme zli</p>
+            </li>
+        </ul>
+
+        <footer>&copy; 2023 Ivetka. Všetky práva vyhradené.</footer>
+    </main>
+</body>
+
+</html>
